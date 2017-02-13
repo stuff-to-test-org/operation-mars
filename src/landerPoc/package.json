@@ -1,0 +1,28 @@
+{
+  "name": "operation-mars-poc",
+  "version": "0.1.0",
+  "description": "A Programming Game",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "http-server -o -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewNichols/operation-mars.git"
+  },
+  "keywords": [
+    "game",
+    "programming-challanges"
+  ],
+  "author": "Matthew Nichols",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatthewNichols/operation-mars/issues"
+  },
+  "homepage": "https://github.com/MatthewNichols/operation-mars#readme"
+}

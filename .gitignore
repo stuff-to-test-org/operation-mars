@@ -30,5 +30,8 @@ bld/
 # The packages folder can be ignored because of Package Restore
 **/packages/*
 
+#npm Modules
+**/node_modules/*
+
 # WebStorm Files
 .idea/*
