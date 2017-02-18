@@ -34,4 +34,4 @@ bld/
 **/node_modules/*
 
 # WebStorm Files
-.idea/*
+**/.idea/*
