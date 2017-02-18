@@ -8,18 +8,19 @@ var ts = require('gulp-typescript');
 //var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
+const fallingShipTsFiles = "Scripts/PageScripts/FallingShip/*.ts";
 const cssDir = 'input/assets/css';
 
 gulp.task('compileTypescript', () => {
 	console.log("compileTypescript");
-	var tsResult = gulp.src("Scripts/PageScripts/Phaser/*.ts")
+	var tsResult = gulp.src(fallingShipTsFiles)
 		.pipe(sourcemaps.init())
 		.pipe(ts({
 			module: "amd",
-			out: "site.js"
+			out: "Scripts/PageScripts/site.js"
 		}))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("Scripts/PageScripts/Phaser"));
+		.pipe(gulp.dest("."));
 });
 
 // gulp.task('compileSass', () => {
@@ -34,6 +35,6 @@ gulp.task('compileTypescript', () => {
 // });
 
 gulp.task('default', () => {
-	gulp.watch("Scripts/PageScripts/Phaser/*.ts", ["compileTypescript"]);
+	gulp.watch(fallingShipTsFiles, ["compileTypescript"]);
 	//gulp.watch(`${cssDir}/*/*.scss`, ["compileSass"]);
 });
