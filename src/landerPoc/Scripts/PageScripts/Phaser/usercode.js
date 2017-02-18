@@ -23,4 +23,5 @@ define(["require", "exports"], function (require, exports) {
     }());
     exports.UserCode = UserCode;
 });
-//# sourceMappingURL=usercode.js.map
+
+//# sourceMappingURL=UserCode.js.map

@@ -1,4 +1,5 @@
 ﻿/// <reference path="../../typings/phaser/phaser.d.ts" />
+/// <reference path="../../typings/jquery/jquery.d.ts" />
 /// <reference path="usercode.ts" />
 
 import uc = require("UserCode");
@@ -77,7 +78,6 @@ export class GameRunningState extends Phaser.State {
             this.game.paused = true;
             //this.pauseUpdate();
         });
-        //$('#pause').click(() => this.game.physics.p2["isPaused"] = true);
         $('#resume').click(() => this.game.paused = false);
         
         this.prepUserCode();
@@ -90,9 +90,7 @@ export class GameRunningState extends Phaser.State {
         } else if (this.ship.thrusting) {
             this.ship.stopThrust();
         }
-
         
-
         this.userCode.execute(this.ship);
     }
 

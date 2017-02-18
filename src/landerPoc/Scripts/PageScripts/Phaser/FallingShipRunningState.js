@@ -1,4 +1,5 @@
 /// <reference path="../../typings/phaser/phaser.d.ts" />
+/// <reference path="../../typings/jquery/jquery.d.ts" />
 /// <reference path="usercode.ts" />
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -55,7 +56,6 @@ define(["require", "exports", "UserCode", "Ship"], function (require, exports, u
                 _this.game.paused = true;
                 //this.pauseUpdate();
             });
-            //$('#pause').click(() => this.game.physics.p2["isPaused"] = true);
             $('#resume').click(function () { return _this.game.paused = false; });
             this.prepUserCode();
             this.ship = new ship.Ship(this.shipSprite, this.game);
@@ -112,4 +112,5 @@ define(["require", "exports", "UserCode", "Ship"], function (require, exports, u
     }(Phaser.State));
     exports.GameRunningState = GameRunningState;
 });
+
 //# sourceMappingURL=FallingShipRunningState.js.map

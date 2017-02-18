@@ -24,4 +24,5 @@ define(["require", "exports", "FallingShipIntroState", "FallingShipRunningState"
     //Debug only
     window["FallingShip"] = runningGame;
 });
+
 //# sourceMappingURL=FallingShipApp.js.map

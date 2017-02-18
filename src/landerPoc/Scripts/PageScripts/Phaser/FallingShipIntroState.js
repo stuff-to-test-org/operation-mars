@@ -1,4 +1,5 @@
 /// <reference path="../../typings/phaser/phaser.d.ts" />
+/// <reference path="../../typings/jquery/jquery.d.ts" />
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -23,7 +24,9 @@ define(["require", "exports"], function (require, exports) {
         GameIntroState.prototype.create = function () {
             var _this = this;
             //console.log("Intro create");
-            var introText = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Lame Intro text!", { font: '50px Arial', fill: '#ff0044', align: 'center' });
+            var introTitle = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 100, "Lander Proof of Concept", { font: '50px Arial', fill: '#ff0044', align: 'center' });
+            introTitle.anchor.set(0.5);
+            var introText = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Land the spacecraft by writing the code that controls the decent.", { font: '30px Arial', fill: '#ff0044', align: 'center' });
             introText.anchor.set(0.5);
             $('#start').click(function () { return _this.game.state.start("RunningState", true, false); });
         };
@@ -33,4 +36,5 @@ define(["require", "exports"], function (require, exports) {
     }(Phaser.State));
     exports.GameIntroState = GameIntroState;
 });
+
 //# sourceMappingURL=FallingShipIntroState.js.map

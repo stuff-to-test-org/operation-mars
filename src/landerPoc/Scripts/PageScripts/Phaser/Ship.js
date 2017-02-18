@@ -31,4 +31,5 @@ define(["require", "exports"], function (require, exports) {
     }());
     exports.Ship = Ship;
 });
+
 //# sourceMappingURL=Ship.js.map

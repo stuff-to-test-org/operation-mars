@@ -7,4 +7,5 @@ requirejs.config({
     }
 });
 require(["FallingShipApp"]);
+
 //# sourceMappingURL=config.js.map
