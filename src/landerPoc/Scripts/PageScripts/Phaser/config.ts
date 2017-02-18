@@ -1,11 +1,27 @@
 ﻿/// <reference path="../../typings/requirejs/require.d.ts" />
 
-requirejs.config({
-    //baseUrl: '../..',
-    paths: {
-        'jquery': '/Scripts/jquery-2.1.4.min',
-        'phaser': '/Scripts/phaser/phaser.min'
-    }
-});
+namespace FallingShipInit {
 
-require(["FallingShipApp"]);
+    export function init() {
+        requirejs.config({
+            //baseUrl: '../..',
+            paths: {
+                'jquery': '/Scripts/jquery-2.1.4.min',
+                'phaser': '/Scripts/phaser/phaser.min'
+            }
+        });
+
+        require(["FallingShipApp"]);
+    }
+}
+
+// requirejs.config({
+//     //baseUrl: '../..',
+//     paths: {
+//         'jquery': '/Scripts/jquery-2.1.4.min',
+//         'phaser': '/Scripts/phaser/phaser.min'
+//     }
+// });
+//
+// require(["FallingShipApp"]);
+

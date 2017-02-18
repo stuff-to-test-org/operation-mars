@@ -16,7 +16,7 @@ gulp.task('compileTypescript', () => {
 		.pipe(sourcemaps.init())
 		.pipe(ts({
 			module: "amd",
-			//out: "site.js"
+			out: "site.js"
 		}))
 		.pipe(sourcemaps.write("."))
 		.pipe(gulp.dest("Scripts/PageScripts/Phaser"));
