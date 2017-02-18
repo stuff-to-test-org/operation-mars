@@ -11,3 +11,12 @@ a basic web-server.
 `npm install`  
 `npm start`
 
+- TypeScript Compilation
+  - Install Gulp  
+  `npm install gulp -g`
+  - Install Dependencies  
+  `npm install`
+  - Compile once  
+  `gulp compileTypescript`
+  - Compile and watch for changes  
+  `gulp`
