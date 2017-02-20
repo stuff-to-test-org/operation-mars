@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Operation Mars</title>
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/CodeMirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="Scripts/CodeMirror/theme/base16-dark.css" rel="stylesheet" />
 </head>
 <body>
     <h1>Operation Mars</h1>
@@ -13,8 +16,34 @@
         writing the flight controller computers code.
     </p>
 
-    <p>
-        <img src="images/lander-poc.png" alt="Lander Proof of Concept">
-    </p>
+    <!--<p>-->
+        <!--<img src="images/lander-poc.png" alt="Lander Proof of Concept">-->
+    <!--</p>-->
+
+    <div id="container">
+        <div id="col-ship">
+            <div id="content"></div>
+        </div>
+
+        <div id="col-code">
+            <div id="codeArea"></div>
+            <div id="buttons">
+                <a href="#" id="start" class="btn ">Start</a>
+                <a href="#" id="pause" class="btn disabled">Pause</a>
+                <a href="#" id="resume" class="btn disabled">Resume</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/phaser.min.js"></script>
+    <script src="Scripts/CodeMirror/lib/codemirror.js"></script>
+    <script src="Scripts/CodeMirror/mode/javascript/javascript.js"></script>
+
+    <script src="Scripts/require.js"></script>
+    <script src="Scripts/PageScripts/site.js"></script>
+    <script>
+        FallingShipAppConfig.init("Content/");
+    </script>
 </body>
 </html>
