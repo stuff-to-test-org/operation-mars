@@ -4,29 +4,22 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /// <reference path="../../typings/requirejs/require.d.ts" />
-var FallingShipInit;
-(function (FallingShipInit) {
-    function init() {
+var FallingShipAppConfig;
+(function (FallingShipAppConfig) {
+    FallingShipAppConfig.baseAssetPath = "/Content/";
+    function init(assetPath) {
+        FallingShipAppConfig.baseAssetPath = assetPath;
         requirejs.config({
             //baseUrl: '../..',
             paths: {
                 'jquery': '/Scripts/jquery-2.1.4.min',
-                'phaser': '/Scripts/phaser/phaser.min'
+                'phaser': '/Scripts/phaser.min'
             }
         });
         require(["FallingShipApp"]);
     }
-    FallingShipInit.init = init;
-})(FallingShipInit || (FallingShipInit = {}));
-// requirejs.config({
-//     //baseUrl: '../..',
-//     paths: {
-//         'jquery': '/Scripts/jquery-2.1.4.min',
-//         'phaser': '/Scripts/phaser/phaser.min'
-//     }
-// });
-//
-// require(["FallingShipApp"]);
+    FallingShipAppConfig.init = init;
+})(FallingShipAppConfig || (FallingShipAppConfig = {}));
 /// <reference path="../../typings/phaser/phaser.d.ts" />
 /// <reference path="../../typings/jquery/jquery.d.ts" />
 define("FallingShipIntroState", ["require", "exports"], function (require, exports) {
@@ -38,11 +31,12 @@ define("FallingShipIntroState", ["require", "exports"], function (require, expor
         }
         GameIntroState.prototype.preload = function () {
             //console.log("Intro preload");
-            this.game.load.spritesheet('ship', '/Content/images/shipSpriteSheet.png', 30, 40, 11, 0, 1);
-            this.game.load.image("ground", '/Content/images/ground.png');
-            this.game.load.image("groundBlank", '/Content/images/groundBlank.png');
-            this.game.load.image("starfield", '/Content/images/starfield.png');
-            this.game.load.audio('explosion', '/Content/sounds/explosion.mp3');
+            this.game.load.baseURL = FallingShipAppConfig.baseAssetPath;
+            this.game.load.spritesheet('ship', 'images/shipSpriteSheet.png', 30, 40, 11, 0, 1);
+            this.game.load.image("ground", 'images/ground.png');
+            this.game.load.image("groundBlank", 'images/groundBlank.png');
+            this.game.load.image("starfield", 'images/starfield.png');
+            this.game.load.audio('explosion', 'sounds/explosion.mp3');
             //Attribution: http://soundbible.com/1986-Bomb-Exploding.html
         };
         GameIntroState.prototype.create = function () {

@@ -1,7 +1,6 @@
 ﻿/// <reference path="../../typings/phaser/phaser.d.ts" />
 /// <reference path="../../typings/codemirror/codemirror.d.ts" />
 
-//import Phaser = require("phaser");
 import introState = require("FallingShipIntroState");
 import runningState = require("FallingShipRunningState");
 
@@ -11,6 +10,7 @@ export class FallingShipApp {
     constructor()
     {
         this.game = new Phaser.Game("80%", 600, Phaser.AUTO, 'content');
+
         this.game.state.add("IntroState", introState.GameIntroState, false);
         this.game.state.add("RunningState", runningState.GameRunningState, false);
         this.game.state.start("IntroState", true, true);

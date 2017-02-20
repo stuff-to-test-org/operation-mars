@@ -1,13 +1,17 @@
 ﻿/// <reference path="../../typings/requirejs/require.d.ts" />
 
-namespace FallingShipInit {
+namespace FallingShipAppConfig {
 
-    export function init() {
+    export var baseAssetPath: string = "/Content/";
+
+    export function init(assetPath) {
+        baseAssetPath = assetPath;
+
         requirejs.config({
             //baseUrl: '../..',
             paths: {
                 'jquery': '/Scripts/jquery-2.1.4.min',
-                'phaser': '/Scripts/phaser/phaser.min'
+                'phaser': '/Scripts/phaser.min'
             }
         });
 
@@ -15,13 +19,4 @@ namespace FallingShipInit {
     }
 }
 
-// requirejs.config({
-//     //baseUrl: '../..',
-//     paths: {
-//         'jquery': '/Scripts/jquery-2.1.4.min',
-//         'phaser': '/Scripts/phaser/phaser.min'
-//     }
-// });
-//
-// require(["FallingShipApp"]);
 
